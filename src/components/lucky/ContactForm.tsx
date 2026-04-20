@@ -36,23 +36,28 @@ const ContactForm: React.FC = () => {
     return Object.keys(e).length === 0;
   };
 
+  
   const handleSubmit = async (ev: React.FormEvent) => {
     ev.preventDefault();
     if (!validate()) return;
-
+  
     setSubmitting(true);
     setSubmitError(null);
-
+  
     try {
-      const { error } = await supabase.from('contact_submissions').insert({
-        company_name: formData.companyName.trim(),
-        contact_name: formData.contactName.trim(),
-        email: formData.email.trim().toLowerCase(),
-        platform_type: formData.platformType,
-        message: formData.message.trim(),
-        status: 'new',
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          companyName: formData.companyName.trim(),
+          contactName: formData.contactName.trim(),
+          email: formData.email.trim().toLowerCase(),
+          platformType: formData.platformType,
+          message: formData.message.trim(),
+        }),
       });
-      if (error) throw error;
+  
+      if (!res.ok) throw new Error('Failed');
       setSubmitted(true);
     } catch {
       setSubmitError('Something went wrong. Please try again.');
