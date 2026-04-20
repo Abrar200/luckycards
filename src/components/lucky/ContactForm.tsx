@@ -59,8 +59,8 @@ const ContactForm: React.FC = () => {
   
       if (!res.ok) throw new Error('Failed');
       setSubmitted(true);
-    } catch {
-      setSubmitError('Something went wrong. Please try again.');
+    } catch (err: any) {
+      setSubmitError(err?.message || 'Something went wrong. Please try again.');
     } finally {
       setSubmitting(false);
     }
