@@ -18,14 +18,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'info@nexadigital.com.au',
+      user: 'abrar@nexadigital.com.au',
       pass: 'lobq gajd vuyi dlhd',
     },
   });
 
   try {
     await transporter.sendMail({
-      from: '"Lucky Cards Enquiries" <info@nexadigital.com.au>',
+      from: '"Lucky Cards Enquiries" <abrar@nexadigital.com.au>',
       to: 'info@nexadigital.com.au',
       replyTo: email,
       subject: `New Enquiry — ${companyName}`,
