@@ -128,15 +128,6 @@ const ContactForm: React.FC = () => {
             <p className="mt-4 text-base text-white/40 leading-relaxed font-normal">
               Tell us about your platform and we'll get back to you within 24 hours.
             </p>
-
-            <div className="mt-10 space-y-5">
-              <div className="group flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-white/60 border border-[#D4AF37]/15 bg-[#D4AF37]/[0.06] group-hover:text-[#D4AF37] group-hover:border-[#D4AF37]/30 group-hover:shadow-[0_0_16px_rgba(212,175,55,0.1)] transition-all duration-400">
-                  <CardEnvelopeIcon size={18} />
-                </div>
-                <span className="text-sm text-white/40">hello@luckycards.com.au</span>
-              </div>
-            </div>
           </div>
 
           {/* Right — Form */}

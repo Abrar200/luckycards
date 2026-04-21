@@ -14,11 +14,6 @@ const pillars = [
     icon: <RegulatedShieldIcon size={24} />,
   },
   {
-    title: 'Configurable RTP',
-    desc: 'Flexible RTP bands to match jurisdictional requirements and operator preferences.',
-    icon: <CustomChipIcon size={24} />,
-  },
-  {
     title: 'Regulated Markets',
     desc: 'Purpose-built to meet compliance obligations across licensed casino markets.',
     icon: <RuleBookIcon size={24} />,
@@ -73,7 +68,7 @@ const TrustCredibility: React.FC = () => {
         </div>
 
         {/* 4-column pillar grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {pillars.map((p, i) => (
             <div
               key={p.title}
